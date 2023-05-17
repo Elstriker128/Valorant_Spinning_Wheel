@@ -97,7 +97,6 @@ namespace Valorant_Spinning_Wheel
         }
         private void pictureBox1_Paint(object sender, PaintEventArgs e)
         {
-            //float distance=float.MaxValue;
 
             //GenerateBrushes(valueBrushes);
             float angle = 0;
