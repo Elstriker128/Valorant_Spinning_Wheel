@@ -1,0 +1,11 @@
+C:\Users\User\OneDrive\Desktop\VSP\Valorant_Spinning_Wheel\bin\Debug\Valorant_Spinning_Wheel.exe.config
+C:\Users\User\OneDrive\Desktop\VSP\Valorant_Spinning_Wheel\bin\Debug\Valorant_Spinning_Wheel.exe
+C:\Users\User\OneDrive\Desktop\VSP\Valorant_Spinning_Wheel\bin\Debug\Valorant_Spinning_Wheel.pdb
+C:\Users\User\OneDrive\Desktop\VSP\Valorant_Spinning_Wheel\obj\Debug\Valorant_Spinning_Wheel.csproj.AssemblyReference.cache
+C:\Users\User\OneDrive\Desktop\VSP\Valorant_Spinning_Wheel\obj\Debug\Valorant_Spinning_Wheel.csproj.SuggestedBindingRedirects.cache
+C:\Users\User\OneDrive\Desktop\VSP\Valorant_Spinning_Wheel\obj\Debug\Valorant_Spinning_Wheel.Properties.Resources.resources
+C:\Users\User\OneDrive\Desktop\VSP\Valorant_Spinning_Wheel\obj\Debug\Valorant_Spinning_Wheel.csproj.GenerateResource.cache
+C:\Users\User\OneDrive\Desktop\VSP\Valorant_Spinning_Wheel\obj\Debug\Valorant_Spinning_Wheel.csproj.CoreCompileInputs.cache
+C:\Users\User\OneDrive\Desktop\VSP\Valorant_Spinning_Wheel\obj\Debug\Valorant_Spinning_Wheel.exe
+C:\Users\User\OneDrive\Desktop\VSP\Valorant_Spinning_Wheel\obj\Debug\Valorant_Spinning_Wheel.pdb
+C:\Users\User\OneDrive\Desktop\VSP\Valorant_Spinning_Wheel\obj\Debug\Valorant_Spinning_Wheel.Form1.resources

@@ -1,0 +1,8 @@
+﻿To Do:
+1. Make it so the program remembers the exact place the wheeled stopped - Done;
+2. UI - ;
+3. Read agents from an XML file - Done;
+4. Make a method that generates brush colors - Done;
+5. Make an XML file - Done;
+6. Rotate the text inside the arc - ;
+7. Add a marker where it stops - ;
