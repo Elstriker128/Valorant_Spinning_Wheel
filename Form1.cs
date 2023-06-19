@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Linq;
+using System.Web;
 
 namespace Valorant_Spinning_Wheel
 {
@@ -30,10 +31,14 @@ namespace Valorant_Spinning_Wheel
         {
             InitializeComponent();
 
+            //Generate random wheel spin speed between 80 and 110
             Random random = new Random();
             spinSpeed = random.Next(80,110);
 
             label1.Text = "Agent";
+            
+            pictureBox2.Image = Image.FromFile("C:/Users/User/OneDrive/Desktop/VSP/Valorant_Spinning_Wheel/Style/Arrow.png");
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
 
             //Initiate agents array
             agents = new string[document.Descendants().Count()-1];
@@ -68,6 +73,9 @@ namespace Valorant_Spinning_Wheel
             valueBrushes = GenerateBrushes();
             pictureBox1.Invalidate();
         }
+        /// <summary>
+        /// A method that reads all the agents from a XML file
+        /// </summary>
         private void ReadAgents()
         {
             XmlDocument doc = new XmlDocument();
@@ -82,6 +90,10 @@ namespace Valorant_Spinning_Wheel
                 count++;
             }
         }
+        /// <summary>
+        /// A method that returns an array of different color brushes for each of the agents
+        /// </summary>
+        /// <returns>an array of different color brushes for each of the agents</returns>
         private Brush[] GenerateBrushes()
         {
             Brush[] brushes= new Brush[agents.Count()];
@@ -95,10 +107,13 @@ namespace Valorant_Spinning_Wheel
             }
             return brushes;
         }
+        /// <summary>
+        /// A method that paints a round pie like object into the pictureBox1
+        /// </summary>
+        /// <param name="sender">an object of the object class</param>
+        /// <param name="e">an object of the PaintEventArgs event class</param>
         private void pictureBox1_Paint(object sender, PaintEventArgs e)
         {
-
-            //GenerateBrushes(valueBrushes);
             float angle = 0;
             float sweep = 360f / agents.Length;
             PointF center = new PointF(pictureBox1.Width/2,pictureBox1.Height/2);
@@ -114,6 +129,11 @@ namespace Valorant_Spinning_Wheel
                 
             }
         }
+        /// <summary>
+        /// A method that repeats everytime the timer ticks
+        /// </summary>
+        /// <param name="sender">an object of the object class</param>
+        /// <param name="e">an object of the PaintEventArgs event class</param>
         private void timer_Tick(object sender, EventArgs e)
         {
             // Spin the wheel
@@ -130,6 +150,11 @@ namespace Valorant_Spinning_Wheel
             pictureBox1.Invalidate();
             label1.Text = CalculateLandedValue(270-currentAngle).ToString();
         }
+        /// <summary>
+        /// A method that calculates the value that the wheel stopped on
+        /// </summary>
+        /// <param name="angle">the angle that the wheel stopped on</param>
+        /// <returns>the value that the wheel stopped on</returns>
         private string CalculateLandedValue(float angle)
         {
             //Calculate the value that the wheel landed on
@@ -142,6 +167,18 @@ namespace Valorant_Spinning_Wheel
                 int landedIndex = (int)(landedAngle / anglePerValue);
                 return agents[landedIndex];
         }
+        /// <summary>
+        /// A method that draws a string on the painted pie and inserts the agent's name into the neccesarry spot
+        /// </summary>
+        /// <param name="g">The painted pie object</param>
+        /// <param name="s">The name of the agent</param>
+        /// <param name="font">The used font for the agents name</param>
+        /// <param name="brush">The used brush for painting the arc</param>
+        /// <param name="rect">An object of the painted rectangle</param>
+        /// <param name="startAngle">The start from where the arcs will be painted</param>
+        /// <param name="sweepAngle">The size for each of the arcs</param>
+        /// <param name="center">The center of the rectangle</param>
+        /// <param name="count">The amount of agents</param>
         private void DrawStringOnArc(Graphics g, string s, Font font, Brush brush, RectangleF rect, float startAngle, float sweepAngle, PointF center, int count)
         {
             // Draw a string along an arc
@@ -168,9 +205,6 @@ namespace Valorant_Spinning_Wheel
             PointF textPosition = new PointF((float)x, (float)y);
 
             g.DrawString(s, font, Brushes.Black, textPosition, format);
-
-            //Another option for putting the name in the needed position:
-            //PointF textPosition = new PointF(pathBounds.X + pathBounds.Width / 2, pathBounds.Y + pathBounds.Height / 2);
 
         }
         
