@@ -82,6 +82,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Agent_Data\Agents.xml" />
+    <Content Include="Style\Arrow.png" />
     <Content Include="ToDo.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
